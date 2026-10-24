@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grade 12 Reviewer</title>
+
+    <meta name="description" content="A web-based Grade 12 reviewer for students.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Grade 12 Reviewer</h1>
+        <p>Single-Page Web-Based Reviewer</p>
+    </header>
+
+    <main id="subjects" class="page">
+        <section class="search-section">
+            <h2>Find a Lesson</h2>
+            <input
+                type="text"
+                id="searchBar"
+                placeholder="Search subjects, lessons, or keywords..."
+                oninput="searchContent()"
+                aria-label="Search subjects and lessons"
+            >
+            <div id="searchResults"></div>
+        </section>
+
+        <section class="subject-section">
+            <div id="subjectButtons" class="button-container"></div>
+        </section>
+    </main>
+
+    <main id="subjectPage" class="page" style="display: none;">
+        <button type="button" class="back-button" onclick="showSubjects()">
+            ← Back to Subjects
+        </button>
+
+        <h2 id="subjectTitle"></h2>
+
+        <div id="lessonButtons" class="button-container"></div>
+    </main>
+
+    <main id="lessonPage" class="page lesson" style="display: none;">
+        <button type="button" class="back-button" onclick="showSubject(currentSubject)">
+            ← Back to Lessons
+        </button>
+
+        <h2 id="lessonTitle"></h2>
+
+        <div id="lessonContent"></div>
+    </main>
+
+     
+<button
+    type="button"
+    id="floatingBackButton"
+    class="floating-back-button"
+    aria-label="Go back"
+    title="Go back"
+    onclick="goBack()"
+>
+    ← Back
+</button>
+
+
+
+    <button
+        type="button"
+        id="themeToggle"
+        class="theme-toggle"
+        aria-label="Switch to dark mode"
+    >
+        🌙
+    </button>
+
+    <script src="lessons.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
